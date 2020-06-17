@@ -3,6 +3,7 @@ laravel:
   build:
     - 'composer install --classmap-authoritative'
     # - 'php artisan event:cache'
+    - 'php artisan vendor:publish --provider=Sendportal\\Base\\SendportalBaseServiceProvider'
     - 'npm install && npm run production && rm -rf node_modules'
   deploy:
     - 'php artisan migrate --force'
